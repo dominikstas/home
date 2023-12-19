@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/')
+def index():
     imie_i_nazwisko = "Dominik Stasiak"
     info = "Sexiest coder alive"
     link_do_github = "https://github.com/dominikstas"
@@ -19,3 +23,6 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+
+
