@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+
+    background-image: url('images/background.jpg'); 
+    /* Nasa - "Hubble Observes One-of-a-Kind Star Nicknamed 'Nasty'"
+    https://images.nasa.gov/details/hubble-observes-one-of-a-kind-star-nicknamed-nasty_17754652960_o*/
+
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 30%;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.projects-button {
+    background-color: #4c4c4c; 
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(17, 17, 17, 0.7)transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.projects-button:hover::before {
+    opacity: 1;
+}
+
+.projects-button:hover {
+    background-color: #666666; 
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 10%, transparent 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+a:hover::before {
+    opacity: 1;
+}
+
+a:hover {
+    background-color: #393838;
+}

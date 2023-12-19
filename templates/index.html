@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/img.jpg') }}" alt="photo">
+        <h1>{{ imie_i_nazwisko }}</h1>
+        <p>{{ info }}</p>
+        <button class="projects-button">Sprawdź moje projekty</button>
+        <div class="social-links">
+            <a href="{{ link_do_github }}" target="_blank">GitHub</a>
+            <a href="{{ link_do_gitlab }}" target="_blank">GitLab</a>
+            <a href="mailto:{{ adres_email }}">E-mail</a>
+        </div>
+    </div>
+</body>
+</html>
