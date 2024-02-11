@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #111111;
+    color: white;
+    transition: background-color 0.5s ease-in-out;
+}
+
+nav {
+    background-color: #111111;
+    transition: background-color 0.5s ease-in-out;
+    margin-top: 40px; 
+    margin-right: 40px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    transition: opacity 0.5s ease-in-out;
+}
+
+li {
+    margin: 0 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    transition: color 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+a:hover {
+    color: #9b59b6;
+}
+
+.content {
+    text-align: left;
+    padding: 100px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    animation: fadeInLeft 1s ease-in-out 0.5s forwards;
+}
+
+.title {
+    font-size: 5em;
+    margin-bottom: 20px;
+    transition: color 0.5s ease-in-out;
+}
+
+.subtitle {
+    font-size: 2.8em;
+    line-height: 1.8;
+    transition: color 0.5s ease-in-out;
+}
+
+.button-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 2.4em;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 50px;
+    }
+
+    .title {
+        font-size: 3em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a:nth-child(1) {
+    animation: fadeInUp 1s ease-in-out 1s forwards;
+}
+
+a:nth-child(2) {
+    animation: fadeInUp 1s ease-in-out 1.5s forwards;
+}
+
+a:nth-child(3) {
+    animation: fadeInUp 1s ease-in-out 2s forwards;
+}
