@@ -123,3 +123,51 @@ a:nth-child(2) {
 a:nth-child(3) {
     animation: fadeInUp 1s ease-in-out 2s forwards;
 }
+
+/* bigger mobile devices */
+@media screen and (max-width: 1024px) {
+    nav {
+        margin-top: 20px;
+        margin-right: 20px; 
+    }
+
+    a {
+        font-size: 1.8em; 
+    }
+
+    .title {
+        font-size: 4em; 
+    }
+
+    .subtitle {
+        font-size: 2.2em; 
+    }
+
+    .button {
+        font-size: 1.5em; 
+    }
+}
+
+/* smaller mobile devices */
+@media screen and (max-width: 768px) {
+    nav {
+        margin-top: 10px; 
+        margin-right: 10px; 
+    }
+
+    a {
+        font-size: 1.5em; 
+    }
+
+    .title {
+        font-size: 3em; 
+    }
+
+    .subtitle {
+        font-size: 1.5em; 
+    }
+
+    .button {
+        font-size: 1.1em;
+    }
+}
