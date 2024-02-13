@@ -126,7 +126,19 @@ ul a:nth-child(3) {
 ul a:nth-child(4) {
     animation: fadeInUp 1s ease-in-out 0.6s forwards;
 }
-
+.contact {
+    font-size: 4em;
+    margin-bottom: 20px;
+    transition: color 0.5s ease-in-out;
+    text-align: center;
+}
+img {
+        width: 50%;
+        height: auto;
+        margin-right: 20px;
+        display: block;
+        margin: 0 auto; 
+    }
 /* bigger mobile devices */
 @media screen and (max-width: 1024px) {
     nav {
