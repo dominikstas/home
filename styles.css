@@ -63,6 +63,7 @@ a:hover {
 
 .button-container {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 30px;
 }
 
@@ -179,5 +180,11 @@ ul a:nth-child(5) {
     .button {
         font-size: 1em;
         padding: 10px;
+        margin: 10px 0;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center; 
     }
 }

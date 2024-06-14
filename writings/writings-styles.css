@@ -36,10 +36,6 @@ a {
     transition: color 0.5s ease-in-out;
 }
 
-.hover:hover {
-    color: #8a2be2;
-}
-
 .content {
     text-align: left;
     padding: 85px;
@@ -64,6 +60,8 @@ a {
 .button-container {
     display: flex;
     margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .button {
@@ -74,7 +72,7 @@ a {
     background-color: #8a2be2; 
     text-decoration: none;
     border-radius: 5px;
-    margin-right: 20px;
+    margin: 10px; 
     opacity: 0;
     transform: translateY(20px);
     transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
@@ -180,9 +178,14 @@ ul a:nth-child(5) {
         font-size: 1.4em;
     }
 
-
     .button {
         font-size: 1em;
         padding: 10px;
+        margin: 20px 0;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center; 
     }
 }
