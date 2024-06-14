@@ -173,8 +173,13 @@ ul a:nth-child(5) {
     }
 
     .subtitle {
-        font-size: 1.2em;
+        font-size: 1.8em;
     }
+
+    a {
+        font-size: 1.4em;
+    }
+
 
     .button {
         font-size: 1em;
