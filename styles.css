@@ -2,13 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f3e6ff; 
-    color: #333; 
+    background-color: #ffffff; /* Changed to white */
+    color: #333333; /* Dark grey */
     transition: background-color 0.5s ease-in-out;
 }
 
 nav {
-    background-color: #f3e6ff; 
+    background-color: #ffffff; /* Changed to white */
     margin: 40px 40px 0 0;
     transition: background-color 0.5s ease-in-out;
 }
@@ -29,7 +29,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #8a2be2;
+    color: #000000; /* Black */
     font-size: 2em;
     position: relative;
     overflow: hidden;
@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-    color: darkgray; 
+    color: #808080; /* Grey */
 }
 
 .content {
@@ -71,8 +71,8 @@ a:hover {
     display: inline-block;
     padding: 20px 40px;
     font-size: 2.4em;
-    color: white;
-    background-color: #8a2be2; 
+    color: #ffffff; /* White */
+    background-color: #000000; /* Black */
     text-decoration: none;
     border-radius: 5px;
     margin-right: 20px;
@@ -82,9 +82,9 @@ a:hover {
 }
 
 .button:hover {
-    background-color: #dda0dd;
+    background-color: #808080; /* Grey */
     transform: scale(1.1);
-    color:#8a2be2;
+    color: #000000; /* Black */
 }
 
 .contact {
