@@ -62,7 +62,6 @@ a:hover {
         flex-direction: column;
         align-items: center;
         position: fixed;
-        top: 0;
         right: 0;
         height: 100vh;
         width: 100%;
@@ -70,7 +69,10 @@ a:hover {
         z-index: 999;
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
-        padding-top: 60px;
+    }
+
+    .menu a {
+        bottom: 20vh;
     }
 
     #menu-toggle:checked + .menu-icon + nav .menu {
