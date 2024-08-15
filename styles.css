@@ -133,6 +133,8 @@ img {
 
 .content {
     text-align: left;
+    margin-left: 3%;
+    margin-right: 3%;
     padding: 20px;
     opacity: 0;
     transform: translateX(-50px);
