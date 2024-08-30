@@ -1,0 +1,45 @@
+TEMPLATE FOR ARTICLES HTML 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world - Dominik Stasiak</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="https://symbl-world.akamaized.net/i/webp/2d/0dc3e41814ebcb843bfcdada0a6315.webp">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <nav>
+        <ul class="menu">
+            <li><a href="../index.html" class="button button0">Home</a></li>
+            <li><a href="../writing.html" class="button button4">Writing</a></li>
+            <li><a href="../work.html" class="button button1">Work</a></li>
+            <li><a href="../about.html" class="button button2">About</a></li>
+            <li><a href="../contact.html" class="button button3">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div>
+            <h1 class="title">Cyprus - 06.13.2024</h1>
+
+            <h2 class="subtitle">Table of Contents</h2>
+            <ol>
+                <li><a href="" class="hover"></a></li>
+                
+            </ol>
+
+            <h2 id="" class="subtitle"> </h2>
+            <a>
+    
+            </a>
+
+           
+        </div>
+    </div>
+</body>
+</html>
