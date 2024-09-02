@@ -178,6 +178,10 @@ img {
     .content {
         padding: 40px;
     }
+
+    img {
+        width: 70%;
+    }
 }
 
 @media screen and (max-width: 480px) {
