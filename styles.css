@@ -154,6 +154,20 @@ img {
     transition: color 0.5s ease-in-out;
 }
 
+/* "w" class for writings (non hover a)*/
+
+.w {
+    text-decoration: none;
+    color: #000000;
+    font-size: 2em;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.5s ease-in-out;
+}
+
+.w:hover{
+    color: #000000;
+}
 
 
 /* Media Queries for Other Breakpoints */
