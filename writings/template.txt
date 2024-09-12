@@ -34,7 +34,7 @@ TEMPLATE FOR ARTICLES HTML
             </ol>
 
             <h2 id="" class="subtitle"> </h2>
-            <a>
+            <a class="w">
     
             </a>
 
