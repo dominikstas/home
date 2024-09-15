@@ -1,0 +1,38 @@
+---
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Me</a></li>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/writings">Writings</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot></slot>
+    </main>
+
+    <footer>
+      <p>© 2024 Dominic - All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
