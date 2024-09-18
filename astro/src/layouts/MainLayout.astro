@@ -1,0 +1,118 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Portfolio software engineera" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">Jan Kowalski</div>
+        <ul>
+          <li><a href="/">Strona główna</a></li>
+          <li><a href="/projects">Projekty</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+      // Możesz dodać tutaj skrypty, które mają być dostępne na każdej stronie
+    </script>
+  </body>
+</html>
+
+<style>
+  /* Style dla layoutu */
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-left: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+
+  main {
+    min-height: calc(100vh - 160px);
+    padding: 2rem 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #eaeaea;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav ul {
+      margin-top: 1rem;
+      flex-direction: column;
+    }
+
+    nav ul li {
+      margin-left: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
