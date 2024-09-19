@@ -1,71 +1,98 @@
-import React, { useState, useEffect } from 'react';
+'use client'
+import React, { useState, useEffect } from 'react'
 
-const HeroComponent = () => {
-  const [displayedText, setDisplayedText] = useState('');
-  const fullName = 'Dominik Stasiak';
-  const [showCursor, setShowCursor] = useState(true);
+export default function HeroComponent() {
+  const [displayedText, setDisplayedText] = useState('')
+  const fullName = 'Dominik Stasiak'
+  const [showCursor, setShowCursor] = useState(true)
 
   useEffect(() => {
     if (displayedText.length < fullName.length) {
       const timer = setTimeout(() => {
-        setDisplayedText(fullName.slice(0, displayedText.length + 1));
-      }, 150);
-      return () => clearTimeout(timer);
+        setDisplayedText(fullName.slice(0, displayedText.length + 1))
+      }, 150)
+      return () => clearTimeout(timer)
     }
-  }, [displayedText]);
+  }, [displayedText])
 
   useEffect(() => {
     const cursorInterval = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
-    return () => clearInterval(cursorInterval);
-  }, []);
+      setShowCursor((prev) => !prev)
+    }, 500)
+    return () => clearInterval(cursorInterval)
+  }, [])
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: '#1a1a1a',
-      color: 'white',
-      padding: '1rem',
-    }}>
-      <div style={{ textAlign: 'center' }}>
-        <h1 style={{
-          fontSize: '3rem',
-          fontWeight: 'bold',
-          marginBottom: '1rem',
-        }}>
+    <div style={styles.container}>
+      <div style={styles.content}>
+        <h1 style={styles.heading}>
           {displayedText}
-          <span style={{
-            opacity: showCursor ? 1 : 0,
-            transition: 'opacity 0.1s',
-          }}>|</span>
+          <span
+            style={{
+              ...styles.cursor,
+              opacity: showCursor ? 1 : 0,
+              transition: 'opacity 0.1s',
+            }}
+          >
+            |
+          </span>
         </h1>
-        <p style={{
-          fontSize: '1.25rem',
-          marginBottom: '2rem',
-          maxWidth: '600px',
-          margin: '0 auto 2rem',
-        }}>
-          Software Engineer - combining physics with technology.
+        <p style={styles.description}>
+          Software Engineer - combining physics with technology to create innovative solutions.
         </p>
-        <button style={{
-          backgroundColor: 'white',
-          color: '#1a1a1a',
-          padding: '0.75rem 1.5rem',
-          fontSize: '1rem',
-          fontWeight: 'bold',
-          border: 'none',
-          borderRadius: '9999px',
-          cursor: 'pointer',
-        }}>
-          Let's talk
-        </button>
+        <div>
+          <button style={styles.button}>
+            Let's talk
+          </button>
+        </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HeroComponent;
+const styles = {
+  container: {
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'linear-gradient(45deg, #1a1a1a, #2c2c2c, #3d3d3d)',
+    backgroundSize: '400% 400%',
+    animation: 'gradientBG 15s ease infinite',
+    color: '#e0e0e0',
+    padding: '1rem',
+    fontFamily: "'Poppins', sans-serif",
+  },
+  content: {
+    textAlign: 'center',
+    maxWidth: '800px',
+  },
+  heading: {
+    fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+    fontWeight: 'bold',
+    marginBottom: '1rem',
+    position: 'relative',
+  },
+  cursor: {
+    position: 'absolute',
+  },
+  description: {
+    fontSize: 'clamp(1rem, 3vw, 1.5rem)',
+    marginBottom: '2rem',
+    lineHeight: 1.6,
+  },
+  button: {
+    backgroundColor: 'rgba(224, 224, 224, 0.1)',
+    color: '#e0e0e0',
+    padding: '0.75rem 1.5rem',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    border: '2px solid #e0e0e0',
+    borderRadius: '9999px',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+    outline: 'none',
+  },
+}
+
+
