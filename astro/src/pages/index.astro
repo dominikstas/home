@@ -1,7 +1,8 @@
 ---
-      import HeroComponent from '../components/HeroComponent';
-     
+import HeroComponent from '../components/HeroComponent';
+import Navbar from '../components/Navbar';
 ---
+
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -174,20 +175,7 @@
 </head>
 <body>
     <header>
-        <nav class="container">
-            <a href="#" class="logo">JK</a>
-            <ul class="nav-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        <Navbar client:load />
     </header>
 
     <main>
