@@ -1,86 +1,253 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-
-const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'Astro', 'Git'];
+      import HeroComponent from '../components/HeroComponent';
+     
 ---
 
-<MainLayout title="Jan Kowalski - Software Engineer">
-  <header class="hero">
-    <h1>Jan Kowalski</h1>
-    <p>Fullstack Software Engineer</p>
-  </header>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Kowalski - Inżynier Oprogramowania</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <section class="about">
-    <div>
-      <h2>O mnie</h2>
-      <p>
-        Jestem pasjonatem tworzenia innowacyjnych rozwiązań webowych. 
-        Specjalizuję się w nowoczesnych technologiach frontendowych i backendowych.
-      </p>
-      <ul class="skills">
-        {skills.map(skill => <li>{skill}</li>)}
-      </ul>
-      <a href="/CV.pdf" download class="btn">Pobierz CV</a>
-    </div>
-  </section>
+        /* Globalne style */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
 
-  <section class="social">
-    <h2>Znajdź mnie online</h2>
-    <div class="social-links">
-      <a href="https://github.com/jankowalski" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/jankowalski" target="_blank">LinkedIn</a>
-      <a href="https://twitter.com/jankowalski" target="_blank">Twitter</a>
-    </div>
-  </section>
-</MainLayout>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-<style>
-  .hero {
-    text-align: center;
-    padding: 4rem 0;
-    background: linear-gradient(to right, #f0f0f0, #ffffff);
-  }
-  
-  .about {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin: 2rem 0;
-  }
-  
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .skills li {
-    background: #f0f0f0;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-  }
-  
-  .btn {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 1rem;
-  }
-  
-  .social-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
-  
-  .social-links a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-  }
-</style>
+        /* Nawigacja */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #666;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: #333;
+        }
+
+        /* Hero sekcja */
+        .hero {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 0 4rem;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #333;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Sekcje */
+        section {
+            padding: 4rem 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">JK</a>
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+     
+      
+      <HeroComponent client:load />
+
+        <section id="work">
+            <div class="container">
+                <h2>Moje projekty</h2>
+                <!-- Tutaj dodaj przykładowe projekty -->
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>O mnie</h2>
+                <!-- Tutaj dodaj krótki opis o sobie -->
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2>Blog</h2>
+                <!-- Tutaj dodaj przykładowe wpisy na blogu -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Kontakt</h2>
+                <!-- Tutaj dodaj formularz kontaktowy lub dane kontaktowe -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Skrypt do obsługi menu hamburger
+        document.addEventListener('astro:page-load', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
