@@ -1,0 +1,117 @@
+---
+---
+
+<nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">DS</a>
+      <input type="checkbox" id="hamburger" class="hamburger-checkbox">
+      <label for="hamburger" class="hamburger-label">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Services</a>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Services</a>
+          </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <style>
+    .navbar {
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: background-color 0.3s ease;
+    }
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-item {
+      margin-left: 2rem;
+    }
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ddd;
+    }
+    .hamburger-label {
+      display: none;
+      cursor: pointer;
+    }
+    .hamburger-label span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    .hamburger-checkbox {
+      display: none;
+    }
+    @media screen and (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      }
+      .nav-item {
+        margin: 2.5rem 0;
+      }
+      .hamburger-label {
+        display: block;
+      }
+      .hamburger-checkbox:checked ~ .nav-menu {
+        left: 0;
+      }
+      .hamburger-checkbox:checked + .hamburger-label span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      .hamburger-checkbox:checked + .hamburger-label span:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-checkbox:checked + .hamburger-label span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+    }
+  </style>
