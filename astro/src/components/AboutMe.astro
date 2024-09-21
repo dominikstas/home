@@ -1,0 +1,114 @@
+---
+// AboutMe.astro
+---
+
+<section id="about" class="about-section">
+  <div class="container">
+    <h2>O mnie</h2>
+    <div class="about-content">
+      <div class="about-image">
+        <img src="/path-to-your-image.jpg" alt="Dominik Stasiak" />
+      </div>
+      <div class="about-text">
+        <p>
+          Cześć! Jestem Dominik Stasiak, pasjonat technologii i programowania z wieloletnim doświadczeniem w tworzeniu innowacyjnych rozwiązań webowych.
+        </p>
+        <p>
+          Specjalizuję się w technologiach front-endowych, takich jak React, Vue.js i Astro, ale nie boję się też wyzwań związanych z back-endem. Moja misja to tworzenie eleganckich, wydajnych i intuicyjnych interfejsów użytkownika.
+        </p>
+        <p>
+          Poza pracą, jestem zapalonym podróżnikiem i miłośnikiem dobrej kawy. Wierzę, że najlepsze pomysły rodzą się na styku różnych kultur i doświadczeń.
+        </p>
+        <a href="#contact" class="cta-button">Pobierz moje CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background-color: #fff;
+    padding: 6rem 0;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #333;
+    margin: 1rem auto 0;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .about-image {
+    flex: 1;
+  }
+
+  .about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-text {
+    flex: 2;
+  }
+
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+  }
+
+  .cta-button:hover {
+    background-color: #555;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-image, .about-text {
+      flex: 1;
+    }
+
+    .about-image {
+      margin-bottom: 2rem;
+    }
+  }
+</style>

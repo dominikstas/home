@@ -1,6 +1,7 @@
 ---
 import HeroComponent from '../components/HeroComponent';
 import Navbar from '../components/Navbar.astro';
+import AboutMe from '../components/AboutMe.astro';
 ---
 
 
@@ -9,16 +10,15 @@ import Navbar from '../components/Navbar.astro';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan Kowalski - Inżynier Oprogramowania</title>
+    <title>Dominik Stasiak</title>
     <style>
-        /* Reset */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Globalne style */
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
@@ -33,7 +33,6 @@ import Navbar from '../components/Navbar.astro';
             padding: 0 20px;
         }
 
-        /* Nawigacja */
         header {
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -90,7 +89,6 @@ import Navbar from '../components/Navbar.astro';
             background-color: #333;
         }
 
-        /* Hero sekcja */
         .hero {
             background-color: #333;
             color: #fff;
@@ -124,7 +122,6 @@ import Navbar from '../components/Navbar.astro';
             color: #fff;
         }
 
-        /* Sekcje */
         section {
             padding: 4rem 0;
         }
@@ -134,7 +131,6 @@ import Navbar from '../components/Navbar.astro';
             margin-bottom: 2rem;
         }
 
-        /* Responsywność */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -175,7 +171,7 @@ import Navbar from '../components/Navbar.astro';
 </head>
 <body>
     <header>
-        <Navbar client:load />
+        <Navbar />
     </header>
 
     <main>
@@ -183,11 +179,7 @@ import Navbar from '../components/Navbar.astro';
       
       <HeroComponent client:load />
 
-        <section id="work">
-            <div class="container">
-                <h2>Moje projekty</h2>
-                <!-- Tutaj dodaj przykładowe projekty -->
-            </div>
+        <AboutMe />
         </section>
 
         <section id="about">
@@ -217,25 +209,5 @@ import Navbar from '../components/Navbar.astro';
             <p>&copy; 2024 Jan Kowalski. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
-
-    <script>
-        // Skrypt do obsługi menu hamburger
-        document.addEventListener('astro:page-load', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
