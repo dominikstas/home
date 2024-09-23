@@ -1,0 +1,99 @@
+---
+// Skills.astro
+const skills = [
+  { name: 'Astro', icon: 'simple-icons:astro' },
+  { name: 'C', icon: 'simple-icons:c' },
+  { name: 'C++', icon: 'simple-icons:cplusplus' },
+  { name: 'Python', icon: 'simple-icons:python' },
+  { name: 'SQL', icon: 'simple-icons:postgresql' },
+  { name: 'HTML & CSS', icon: 'simple-icons:html5' },
+  { name: 'Linux', icon: 'simple-icons:linux' },
+  { name: 'Autodesk Inventor', icon: 'simple-icons:autodesk' },
+  { name: 'MATLAB', icon: 'simple-icons:mathworks' },
+];
+---
+
+<section class="skills">
+  <h2>Skills & Technologies</h2>
+  <div class="skill-grid">
+    {skills.map((skill) => (
+      <div class="skill-item">
+        <span class="skill-icon">
+          <i class={`icon ${skill.icon}`}></i>
+        </span>
+        <span class="skill-name">{skill.name}</span>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .skills {
+    padding: 4rem 1rem;
+    background-color: #f8f9fa;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .skill-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-item {
+      padding: 1rem;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+    }
+
+    .skill-name {
+      font-size: 0.9rem;
+    }
+  }
+</style>

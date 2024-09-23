@@ -2,6 +2,7 @@
 import HeroComponent from '../components/HeroComponent';
 import Navbar from '../components/Navbar.astro';
 import AboutMe from '../components/AboutMe.astro';
+import Skills from '../components/Skills.astro';
 ---
 
 
@@ -11,6 +12,7 @@ import AboutMe from '../components/AboutMe.astro';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominik Stasiak</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons.min.css">
     <style>
         
         * {
@@ -180,14 +182,9 @@ import AboutMe from '../components/AboutMe.astro';
       <HeroComponent client:load />
 
         <AboutMe />
-        </section>
+        
+        <Skills />
 
-        <section id="about">
-            <div class="container">
-                <h2>O mnie</h2>
-                <!-- Tutaj dodaj krótki opis o sobie -->
-            </div>
-        </section>
 
         <section id="blog">
             <div class="container">
